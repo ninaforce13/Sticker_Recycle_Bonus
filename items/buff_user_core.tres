@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=28 format=2]
 
-[ext_resource path="res://mods/Sticker_Recycle_Bonus/rare_core.png" type="Texture" id=2]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/sprites/rare_core.png" type="Texture" id=2]
 [ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/AttributeCoreItem.gd" type="Script" id=3]
 [ext_resource path="res://data/status_effects/stat_evasion_up.tres" type="Resource" id=4]
 [ext_resource path="res://data/status_effects/locked_on.tres" type="Resource" id=5]
@@ -27,6 +27,7 @@
 [ext_resource path="res://data/items/tape_plant.tres" type="Resource" id=26]
 [ext_resource path="res://data/items/olive_up.tres" type="Resource" id=27]
 [ext_resource path="res://data/items/old_book.tres" type="Resource" id=28]
+
 
 [resource]
 script = ExtResource( 3 )

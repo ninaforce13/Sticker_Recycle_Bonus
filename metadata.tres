@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
-[ext_resource path="res://mods/Sticker_Recycle_Bonus/mod_load.gd" type="Script" id=1]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/mod_load.gd" type="Script" id=1]
 [ext_resource path="res://mods/Sticker_Recycle_Bonus/translations/new_translation_texts.en.translation" type="Translation" id=2]
-[ext_resource path="res://mods/Sticker_Recycle_Bonus/TutorialPopUp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://mods/Sticker_Recycle_Bonus/TutorialPopUp2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scenes/TutorialPopUp2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scenes/TutorialPopUp.tscn" type="PackedScene" id=4]
 
 [resource]
 script = ExtResource( 1 )
@@ -18,5 +18,5 @@ network_protocol_tag = ""
 modified_files = [  ]
 modified_dirs = [  ]
 translations = [ ExtResource( 2 ) ]
-title_popups = [ ExtResource( 3 ), ExtResource( 4 ) ]
+title_popups = [ ExtResource( 4 ), ExtResource( 3 ) ]
 title_popup_flag = "srb_core_attributes"

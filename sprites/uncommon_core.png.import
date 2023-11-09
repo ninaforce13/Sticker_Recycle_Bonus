@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rare_core.png-5008283756a2fb9d794bcf0587f443be.stex"
+path="res://.import/uncommon_core.png-00193005fbd5d9b674d9fb238fc6d165.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods/Sticker_Recycle_Bonus/rare_core.png"
-dest_files=[ "res://.import/rare_core.png-5008283756a2fb9d794bcf0587f443be.stex" ]
+source_file="res://mods/Sticker_Recycle_Bonus/sprites/uncommon_core.png"
+dest_files=[ "res://.import/uncommon_core.png-00193005fbd5d9b674d9fb238fc6d165.stex" ]
 
 [params]
 

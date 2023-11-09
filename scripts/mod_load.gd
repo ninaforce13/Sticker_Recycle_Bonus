@@ -17,16 +17,16 @@ func on_title_screen():
 
 func init_content():
 	if DLC.has_mod("cat_modutils", 15):
-		DLC.mods_by_id.cat_modutils.trans_patch.add_translation(preload("res://mods/Sticker_Recycle_Bonus/mod_strings.en.translation"))
+		DLC.mods_by_id.cat_modutils.trans_patch.add_translation(preload("res://mods/Sticker_Recycle_Bonus/translations/mod_strings.en.translation"))
 	else:
 		rebuild_translations()
 		
 func _init():
-	var inventory_tabscript: Resource = preload("res://mods/Sticker_Recycle_Bonus/InventoryTab.gd")
+	var inventory_tabscript: Resource = preload("res://mods/Sticker_Recycle_Bonus/scripts/InventoryTab.gd")
 	inventory_tabscript.take_over_path("res://menus/inventory/InventoryTab.gd")
-	var filter_menu:Resource = preload("res://mods/Sticker_Recycle_Bonus/StickerFilterMenu.tscn")
+	var filter_menu:Resource = preload("res://mods/Sticker_Recycle_Bonus/scenes/StickerFilterMenu.tscn")
 	filter_menu.take_over_path("res://menus/inventory/StickerFilterMenu.tscn")
-	var detail_panel:Resource = preload("res://mods/Sticker_Recycle_Bonus/InventoryDetailPanel.tscn")
+	var detail_panel:Resource = preload("res://mods/Sticker_Recycle_Bonus/scenes/InventoryDetailPanel.tscn")
 	detail_panel.take_over_path("res://menus/inventory/InventoryDetailPanel.tscn")
 	var partytapeui_ext:Resource = preload("res://mods/Sticker_Recycle_Bonus/scripts/PartyTapeUI_Ext.gd")
 	partytapeui_ext.take_over_path("res://menus/party_tape/PartyTapeUI.gd")
@@ -53,7 +53,7 @@ func rebuild_translations():
 	var datafiles:Array = []
 	var import_translations:Array = []
 	
-	csvFile.open("res://mods/Sticker_Recycle_Bonus/mod_strings.csv", File.READ)
+	csvFile.open("res://mods/Sticker_Recycle_Bonus/translations/mod_strings.csv", File.READ)
 	Datatables.list_dir(datafiles,"res://.import/","res")
 	for file in datafiles:
 		var loaded_file = load(file)
