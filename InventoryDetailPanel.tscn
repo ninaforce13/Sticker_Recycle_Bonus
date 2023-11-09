@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://nodes/menus/AutoFocusConnector.gd" type="Script" id=1]
+[ext_resource path="res://nodes/menus/AutoScrollContainer.gd" type="Script" id=2]
+[ext_resource path="res://menus/inventory/ItemInfoPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menus/inventory/RecycleBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/InventoryDetailPanel_mod.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 70.0
+content_margin_right = 20.0
+bg_color = Color( 0.670588, 0.458824, 0.909804, 1 )
+corner_radius_top_left = 60
+corner_detail = 1
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_size = 1
+shadow_offset = Vector2( -20, 10 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 10.0
+content_margin_bottom = 60.0
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_bottom_right = 60
+corner_detail = 1
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_size = 1
+shadow_offset = Vector2( -20, 10 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="InventoryDetailPanel" instance=ExtResource( 3 )]
+script = ExtResource( 5 )
+
+[node name="Container" parent="." index="0"]
+margin_bottom = 765.0
+
+[node name="PanelContainer2" parent="Container" index="0"]
+custom_styles/panel = SubResource( 1 )
+
+[node name="HBoxContainer" parent="Container/PanelContainer2" index="0"]
+margin_left = 70.0
+margin_right = 1023.0
+
+[node name="NameLabel" parent="Container/PanelContainer2/HBoxContainer" index="0"]
+margin_right = 916.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+
+[node name="VScrollBar2" type="VScrollBar" parent="Container/PanelContainer2/HBoxContainer/NameLabel" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 47.0
+step = 1.0
+page = 47.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="Container/PanelContainer2/HBoxContainer/NameLabel" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="AmountLabel" parent="Container/PanelContainer2/HBoxContainer" index="1"]
+margin_left = 920.0
+margin_right = 953.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="PanelContainer3" parent="Container" index="1"]
+margin_bottom = 531.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="VBoxContainer" parent="Container/PanelContainer3" index="0"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 1023.0
+margin_bottom = 411.0
+
+[node name="IconContainer" parent="Container/PanelContainer3/VBoxContainer" index="0"]
+margin_right = 1003.0
+
+[node name="Icon" parent="Container/PanelContainer3/VBoxContainer/IconContainer" index="0"]
+margin_right = 997.0
+
+[node name="PanelContainer" parent="Container/PanelContainer3/VBoxContainer" index="1"]
+margin_right = 1003.0
+margin_bottom = 401.0
+
+[node name="DescriptionLabel" parent="Container/PanelContainer3/VBoxContainer/PanelContainer" index="0"]
+margin_right = 1003.0
+margin_bottom = 261.0
+
+[node name="VScrollBar2" type="VScrollBar" parent="Container/PanelContainer3/VBoxContainer/PanelContainer/DescriptionLabel" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 47.0
+step = 1.0
+page = 261.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="Container/PanelContainer3/VBoxContainer/PanelContainer/DescriptionLabel" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="MoveInfoPanel" parent="Container/PanelContainer3/VBoxContainer/PanelContainer" index="1"]
+margin_right = 1003.0
+margin_bottom = 261.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Container" index="2"]
+margin_top = 531.0
+margin_right = 1043.0
+margin_bottom = 761.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Container/PanelContainer" index="0"]
+margin_right = 1043.0
+margin_bottom = 230.0
+rect_clip_content = false
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+script = ExtResource( 2 )
+
+[node name="Buttons" type="VBoxContainer" parent="Container/PanelContainer/ScrollContainer" index="0"]
+margin_top = 230.0
+margin_right = 1043.0
+margin_bottom = 230.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+alignment = 2
+script = ExtResource( 1 )
+focus_on_hover = true
+
+[node name="_h_scroll2" type="HScrollBar" parent="Container/PanelContainer/ScrollContainer" index="1"]
+visible = false
+max_value = 0.0
+page = 1043.0
+
+[node name="_v_scroll2" type="VScrollBar" parent="Container/PanelContainer/ScrollContainer" index="2"]
+visible = false
+max_value = 0.0
+page = 230.0
+
+[node name="_h_scroll3" type="HScrollBar" parent="Container/PanelContainer/ScrollContainer" index="3"]
+
+[node name="_v_scroll3" type="VScrollBar" parent="Container/PanelContainer/ScrollContainer" index="4"]
+
+[node name="RecycleBox" parent="Container/PanelContainer" index="1" instance=ExtResource( 4 )]
+
+[connection signal="focus_entered" from="Container/PanelContainer/RecycleBox" to="." method="_on_RecycleBox_focus_entered"]
+[connection signal="focus_exited" from="Container/PanelContainer/RecycleBox" to="." method="_on_RecycleBox_focus_exited"]
+[connection signal="value_chosen" from="Container/PanelContainer/RecycleBox" to="." method="_on_RecycleBox_value_chosen"]

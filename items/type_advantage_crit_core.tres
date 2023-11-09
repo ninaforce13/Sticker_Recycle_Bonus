@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/uncommon_core.png" type="Texture" id=2]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/AttributeCoreItem.gd" type="Script" id=3]
+
+[resource]
+script = ExtResource( 3 )
+name = "NCRAFTERS_ TYPE_ADVANTAGE_CRIT_NAME"
+aux_name = ""
+icon = ExtResource( 2 )
+description = "NCRAFTERS_ TYPE_ADVANTAGE_CRIT_DESC"
+category = "resources"
+base_stack_limit = 0
+stack_limit_category = ""
+consume_on_use = false
+discardable = true
+value = 1
+usable_contexts = 0
+battle_usage = 0
+sort_order = 0
+buffs = [  ]
+template_path = "res://data/sticker_attributes/type_advantage_crit.tres"
+attach_resource = 8
+attach_cost = 18
+upgrade_resource = 8
+upgrade_cost = 6
+drop_chance = 55
+core_cost = 7

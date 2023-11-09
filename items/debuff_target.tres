@@ -1,0 +1,175 @@
+[gd_resource type="Resource" load_steps=40 format=2]
+
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/rare_core.png" type="Texture" id=2]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/AttributeCoreItem.gd" type="Script" id=3]
+[ext_resource path="res://data/status_effects/stat_evasion_down.tres" type="Resource" id=4]
+[ext_resource path="res://data/status_effects/leeched.tres" type="Resource" id=5]
+[ext_resource path="res://data/status_effects/stat_speed_down.tres" type="Resource" id=6]
+[ext_resource path="res://data/status_effects/stat_rdef_down.tres" type="Resource" id=7]
+[ext_resource path="res://data/status_effects/stat_mdef_down.tres" type="Resource" id=8]
+[ext_resource path="res://data/status_effects/ap_drain.tres" type="Resource" id=9]
+[ext_resource path="res://data/status_effects/glass_bonds.tres" type="Resource" id=10]
+[ext_resource path="res://data/status_effects/bomb.tres" type="Resource" id=11]
+[ext_resource path="res://data/status_effects/stat_matk_down.tres" type="Resource" id=12]
+[ext_resource path="res://data/status_effects/burned.tres" type="Resource" id=13]
+[ext_resource path="res://data/status_effects/shrapnel.tres" type="Resource" id=14]
+[ext_resource path="res://data/status_effects/conductive.tres" type="Resource" id=15]
+[ext_resource path="res://data/status_effects/confused.tres" type="Resource" id=16]
+[ext_resource path="res://data/status_effects/stat_accuracy_down.tres" type="Resource" id=17]
+[ext_resource path="res://data/status_effects/poisoned.tres" type="Resource" id=18]
+[ext_resource path="res://data/status_effects/resonance.tres" type="Resource" id=19]
+[ext_resource path="res://data/status_effects/sleep.tres" type="Resource" id=20]
+[ext_resource path="res://data/status_effects/berserk.tres" type="Resource" id=21]
+[ext_resource path="res://data/status_effects/unitarget.tres" type="Resource" id=22]
+[ext_resource path="res://data/status_effects/flinch.tres" type="Resource" id=23]
+[ext_resource path="res://data/status_effects/stat_ratk_down.tres" type="Resource" id=24]
+[ext_resource path="res://data/status_effects/petrified.tres" type="Resource" id=25]
+[ext_resource path="res://data/items/tape_basic.tres" type="Resource" id=26]
+[ext_resource path="res://data/items/upgrape.tres" type="Resource" id=27]
+[ext_resource path="res://data/items/tape_ice.tres" type="Resource" id=28]
+[ext_resource path="res://data/items/tape_metal.tres" type="Resource" id=29]
+[ext_resource path="res://data/items/tape_lightning.tres" type="Resource" id=30]
+[ext_resource path="res://data/items/fused_material.tres" type="Resource" id=31]
+[ext_resource path="res://data/items/tape_plastic.tres" type="Resource" id=32]
+[ext_resource path="res://data/items/tape_fire.tres" type="Resource" id=33]
+[ext_resource path="res://data/items/tape_poison.tres" type="Resource" id=34]
+[ext_resource path="res://data/items/tape_astral.tres" type="Resource" id=35]
+[ext_resource path="res://data/items/tape_chrome.tres" type="Resource" id=36]
+[ext_resource path="res://data/items/tape_earth.tres" type="Resource" id=37]
+[ext_resource path="res://data/items/tape_plant.tres" type="Resource" id=38]
+[ext_resource path="res://data/items/olive_up.tres" type="Resource" id=39]
+[ext_resource path="res://data/items/old_book.tres" type="Resource" id=40]
+
+[resource]
+script = ExtResource( 3 )
+name = "NCRAFTERS_DEBUFF_TARGET_NAME"
+aux_name = ""
+icon = ExtResource( 2 )
+description = "NCRAFTERS_DEBUFF_TARGET_DESC"
+category = "resources"
+base_stack_limit = 0
+stack_limit_category = ""
+consume_on_use = false
+discardable = true
+value = 1
+usable_contexts = 0
+battle_usage = 0
+sort_order = 0
+buffs = [ {
+"buff": ExtResource( 11 ),
+"cost": 3,
+"resource": ExtResource( 31 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 23 ),
+"cost": 6,
+"resource": ExtResource( 31 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 19 ),
+"cost": 6,
+"resource": ExtResource( 31 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 16 ),
+"cost": 3,
+"resource": ExtResource( 39 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 10 ),
+"cost": 6,
+"resource": ExtResource( 28 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 5 ),
+"cost": 15,
+"resource": ExtResource( 38 ),
+"upgrade_cost": 5
+}, {
+"buff": ExtResource( 18 ),
+"cost": 6,
+"resource": ExtResource( 34 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 14 ),
+"cost": 36,
+"resource": ExtResource( 26 ),
+"upgrade_cost": 12
+}, {
+"buff": ExtResource( 20 ),
+"cost": 3,
+"resource": ExtResource( 27 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 17 ),
+"cost": 9,
+"resource": ExtResource( 40 ),
+"upgrade_cost": 3
+}, {
+"buff": ExtResource( 4 ),
+"cost": 9,
+"resource": ExtResource( 40 ),
+"upgrade_cost": 3
+}, {
+"buff": ExtResource( 12 ),
+"cost": 27,
+"resource": ExtResource( 36 ),
+"upgrade_cost": 9
+}, {
+"buff": ExtResource( 8 ),
+"cost": 27,
+"resource": ExtResource( 36 ),
+"upgrade_cost": 9
+}, {
+"buff": ExtResource( 24 ),
+"cost": 27,
+"resource": ExtResource( 36 ),
+"upgrade_cost": 9
+}, {
+"buff": ExtResource( 7 ),
+"cost": 27,
+"resource": ExtResource( 36 ),
+"upgrade_cost": 9
+}, {
+"buff": ExtResource( 6 ),
+"cost": 9,
+"resource": ExtResource( 40 ),
+"upgrade_cost": 3
+}, {
+"buff": ExtResource( 21 ),
+"cost": 15,
+"resource": ExtResource( 29 ),
+"upgrade_cost": 5
+}, {
+"buff": ExtResource( 9 ),
+"cost": 9,
+"resource": ExtResource( 35 ),
+"upgrade_cost": 3
+}, {
+"buff": ExtResource( 13 ),
+"cost": 6,
+"resource": ExtResource( 33 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 15 ),
+"cost": 12,
+"resource": ExtResource( 30 ),
+"upgrade_cost": 4
+}, {
+"buff": ExtResource( 25 ),
+"cost": 15,
+"resource": ExtResource( 37 ),
+"upgrade_cost": 5
+}, {
+"buff": ExtResource( 22 ),
+"cost": 15,
+"resource": ExtResource( 32 ),
+"upgrade_cost": 5
+} ]
+template_path = "res://data/sticker_attributes/debuff_target.tres"
+attach_resource = 0
+attach_cost = 100
+upgrade_resource = 0
+upgrade_cost = 100
+drop_chance = 80
+core_cost = 1

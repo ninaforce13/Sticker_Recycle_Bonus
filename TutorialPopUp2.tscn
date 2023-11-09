@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/battle_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/fonts/regular/regular_40.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/fonts/regular/regular_40_italic.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/fonts/regular/regular_40_bold.tres" type="DynamicFont" id=4]
+[ext_resource path="res://nodes/menus/TrgRichTextLabel.gd" type="Script" id=5]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 874.0
+margin_bottom = 350.0
+theme = ExtResource( 1 )
+custom_constants/separation = 42
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_bottom = 350.0
+
+[node name="Label2" type="RichTextLabel" parent="."]
+margin_left = 42.0
+margin_right = 874.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "NCRAFTERS_CORE_CRAFTING_TUTORIAL_2"
+text = "NCRAFTERS_CORE_CRAFTING_TUTORIAL_2"
+fit_content_height = true
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}

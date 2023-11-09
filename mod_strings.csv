@@ -1,0 +1,2 @@
+﻿id,en
+UI_INVENTORY_BULK_RECYCLE_CONFIRM,This will permanently remove every [color=#2b9aeb][i]unlocked[/i][/color] sticker that matches the current filter from your inventory. You will also retrieve [color=#2b9aeb]Attribute Cores[/color] from every sticker that matches the current filter.\nAre you sure you want to recycle these {stacks} stack(s) of stickers? {total} sticker(s) in total will be recycled.

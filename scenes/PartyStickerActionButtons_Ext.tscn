@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/battle_theme.tres" type="Theme" id=1]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/PartyStickerActionButtons_Ext.gd" type="Script" id=2]
+
+[node name="PartyStickerActionButtons" type="VBoxContainer"]
+anchor_left = 1.041
+anchor_right = 1.041
+margin_left = -500.72
+margin_right = -0.719971
+margin_bottom = 430.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ApplyStickerBtn" type="Button" parent="."]
+margin_right = 500.0
+margin_bottom = 58.0
+text = "UI_PARTY_APPLY_STICKER"
+
+[node name="PeelStickerBtn" type="Button" parent="."]
+margin_top = 62.0
+margin_right = 500.0
+margin_bottom = 120.0
+text = "UI_PARTY_PEEL_STICKER"
+
+[node name="MoveStickerBtn" type="Button" parent="."]
+margin_top = 124.0
+margin_right = 500.0
+margin_bottom = 182.0
+text = "UI_PARTY_MOVE_STICKER"
+
+[node name="ApplyEffect" type="Button" parent="."]
+margin_top = 186.0
+margin_right = 500.0
+margin_bottom = 244.0
+
+[node name="Label" type="RichTextLabel" parent="ApplyEffect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 3.0
+margin_right = -20.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "NCRAFTERS_APPLY_EFFECT_UI"
+text = "NCRAFTERS_APPLY_EFFECT_UI"
+
+[node name="UpgradeEffect" type="Button" parent="."]
+margin_top = 248.0
+margin_right = 500.0
+margin_bottom = 306.0
+
+[node name="Label" type="RichTextLabel" parent="UpgradeEffect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 3.0
+margin_right = -20.0
+rect_clip_content = false
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "NCRAFTERS_UPGRADE_EFFECT_UI"
+text = "NCRAFTERS_UPGRADE_EFFECT_UI"
+
+[node name="RemoveEffect" type="Button" parent="."]
+margin_top = 310.0
+margin_right = 500.0
+margin_bottom = 368.0
+
+[node name="Label" type="RichTextLabel" parent="RemoveEffect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 3.0
+margin_right = -20.0
+rect_clip_content = false
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "NCRAFTERS_REMOVE_EFFECT_UI"
+text = "NCRAFTERS_REMOVE_EFFECT_UI"
+
+[node name="CancelBtn" type="Button" parent="."]
+margin_top = 372.0
+margin_right = 500.0
+margin_bottom = 430.0
+text = "UI_BUTTON_CANCEL"
+
+[connection signal="pressed" from="ApplyStickerBtn" to="." method="_on_ApplyStickerBtn_pressed"]
+[connection signal="pressed" from="PeelStickerBtn" to="." method="_on_PeelStickerBtn_pressed"]
+[connection signal="pressed" from="MoveStickerBtn" to="." method="_on_MoveStickerBtn_pressed"]
+[connection signal="pressed" from="ApplyEffect" to="." method="_on_ApplyEffect_pressed"]
+[connection signal="pressed" from="UpgradeEffect" to="." method="_on_UpgradeEffect_pressed"]
+[connection signal="pressed" from="RemoveEffect" to="." method="_on_RemoveEffect_pressed"]
+[connection signal="pressed" from="CancelBtn" to="." method="_on_CancelBtn_pressed"]

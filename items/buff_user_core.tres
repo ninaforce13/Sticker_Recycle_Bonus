@@ -1,0 +1,133 @@
+[gd_resource type="Resource" load_steps=28 format=2]
+
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/rare_core.png" type="Texture" id=2]
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/AttributeCoreItem.gd" type="Script" id=3]
+[ext_resource path="res://data/status_effects/stat_evasion_up.tres" type="Resource" id=4]
+[ext_resource path="res://data/status_effects/locked_on.tres" type="Resource" id=5]
+[ext_resource path="res://data/status_effects/healing_leaf.tres" type="Resource" id=6]
+[ext_resource path="res://data/status_effects/stat_mdef_up.tres" type="Resource" id=7]
+[ext_resource path="res://data/status_effects/stat_ratk_up.tres" type="Resource" id=8]
+[ext_resource path="res://data/status_effects/multistrike.tres" type="Resource" id=9]
+[ext_resource path="res://data/status_effects/stat_matk_up.tres" type="Resource" id=10]
+[ext_resource path="res://data/status_effects/ap_boost.tres" type="Resource" id=11]
+[ext_resource path="res://data/status_effects/healing_steam.tres" type="Resource" id=12]
+[ext_resource path="res://data/status_effects/stat_accuracy_up.tres" type="Resource" id=13]
+[ext_resource path="res://data/status_effects/multitarget.tres" type="Resource" id=14]
+[ext_resource path="res://data/status_effects/mind_meld.tres" type="Resource" id=15]
+[ext_resource path="res://data/status_effects/stat_rdef_up.tres" type="Resource" id=16]
+[ext_resource path="res://data/status_effects/cottoned_on.tres" type="Resource" id=17]
+[ext_resource path="res://data/status_effects/stat_speed_up.tres" type="Resource" id=18]
+[ext_resource path="res://data/status_effects/parry_stance.tres" type="Resource" id=19]
+[ext_resource path="res://data/items/upgrape.tres" type="Resource" id=20]
+[ext_resource path="res://data/items/fused_material.tres" type="Resource" id=21]
+[ext_resource path="res://data/items/tape_beast.tres" type="Resource" id=22]
+[ext_resource path="res://data/items/tape_water.tres" type="Resource" id=23]
+[ext_resource path="res://data/items/tape_astral.tres" type="Resource" id=24]
+[ext_resource path="res://data/items/tape_chrome.tres" type="Resource" id=25]
+[ext_resource path="res://data/items/tape_plant.tres" type="Resource" id=26]
+[ext_resource path="res://data/items/olive_up.tres" type="Resource" id=27]
+[ext_resource path="res://data/items/old_book.tres" type="Resource" id=28]
+
+[resource]
+script = ExtResource( 3 )
+name = "NCRAFTERS_BUFF_USER_NAME"
+aux_name = ""
+icon = ExtResource( 2 )
+description = "NCRAFTERS_BUFF_USER_DESC"
+category = "resources"
+base_stack_limit = 0
+stack_limit_category = ""
+consume_on_use = false
+discardable = true
+value = 1
+usable_contexts = 0
+battle_usage = 0
+sort_order = 0
+buffs = [ {
+"buff": ExtResource( 17 ),
+"cost": 3,
+"resource": ExtResource( 20 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 19 ),
+"cost": 6,
+"resource": ExtResource( 22 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 5 ),
+"cost": 3,
+"resource": ExtResource( 27 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 9 ),
+"cost": 3,
+"resource": ExtResource( 21 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 13 ),
+"cost": 12,
+"resource": ExtResource( 25 ),
+"upgrade_cost": 4
+}, {
+"buff": ExtResource( 4 ),
+"cost": 12,
+"resource": ExtResource( 25 ),
+"upgrade_cost": 4
+}, {
+"buff": ExtResource( 10 ),
+"cost": 6,
+"resource": ExtResource( 28 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 7 ),
+"cost": 6,
+"resource": ExtResource( 28 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 8 ),
+"cost": 6,
+"resource": ExtResource( 28 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 16 ),
+"cost": 6,
+"resource": ExtResource( 28 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 18 ),
+"cost": 15,
+"resource": ExtResource( 25 ),
+"upgrade_cost": 5
+}, {
+"buff": ExtResource( 11 ),
+"cost": 6,
+"resource": ExtResource( 24 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 14 ),
+"cost": 3,
+"resource": ExtResource( 21 ),
+"upgrade_cost": 1
+}, {
+"buff": ExtResource( 6 ),
+"cost": 6,
+"resource": ExtResource( 26 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 12 ),
+"cost": 6,
+"resource": ExtResource( 23 ),
+"upgrade_cost": 2
+}, {
+"buff": ExtResource( 15 ),
+"cost": 6,
+"resource": ExtResource( 21 ),
+"upgrade_cost": 2
+} ]
+template_path = "res://data/sticker_attributes/buff_user.tres"
+attach_resource = 0
+attach_cost = 100
+upgrade_resource = 0
+upgrade_cost = 100
+drop_chance = 80
+core_cost = 1

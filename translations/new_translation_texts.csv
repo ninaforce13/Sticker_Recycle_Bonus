@@ -1,0 +1,154 @@
+﻿id,en
+NCRAFTERS_SLOT_CORE_NAME,[color=#{rarity}]Extra Slot Core[/color]
+NCRAFTERS_SLOT_CORE_DESCRIPTION,Adds [color=#2b9aeb][+1 Slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ALT_MATK_NAME,[color=#{rarity}]Melee Attack Alternate Core[/color]
+NCRAFTERS_ALT_MATK_DESC,Adds [color=#2b9aeb][Damage based on Melee Attack if higher][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ALT_MAX_HP_NAME,[color=#{rarity}]Max HP Alternate Core[/color]
+NCRAFTERS_ALT_MAX_HP_DESC,Adds [color=#2b9aeb][Damage based on Max HP if higher][/color] attribute when attached to a compatible sticker.\n
+NCRAFTERS_ALT_MDEF_NAME,[color=#{rarity}]Melee Defense Alternate Core[/color]
+NCRAFTERS_ALT_MDEF_DESC,Adds [color=#2b9aeb][Damage based on Melee Defense if higher][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ALT_RATK_NAME,[color=#{rarity}]Ranged Attack Alternate Core[/color]
+NCRAFTERS_ALT_RATK_DESC,Adds [color=#2b9aeb][Damage based on Ranged Attack if higher][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ALT_RDEF_NAME,[color=#{rarity}]Ranged Defense Alternate Core[/color]
+NCRAFTERS_ALT_RDEF_DESC,Adds [color=#2b9aeb][Damage based on Ranged Defense if higher][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ALT_SPEED_NAME,[color=#{rarity}]Speed Alternate Core[/color]
+NCRAFTERS_ALT_SPEED_DESC,Adds [color=#2b9aeb][Damage based on Speed if higher][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_AP_REFUND1_NAME,[color=#{rarity}]AP Refund 1 Core[/color]
+NCRAFTERS_AP_REFUND1_DESC,Adds [color=#2b9aeb][up to 90% Chance to refund 1 AP after use][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_AP_REFUNDALL_NAME,[color=#{rarity}]AP Refund All Core[/color]
+NCRAFTERS_AP_REFUNDALL_DESC,Adds [color=#2b9aeb][up to 5% Chance to refund all AP after use][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ATK_AFTER_SMACK_NAME,[color=#{rarity}]Smack After Use Core[/color]
+NCRAFTERS_ATK_AFTER_SMACK_DESC,Adds [color=#2b9aeb][up to 90% Chance to use Smack after use][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ATK_AFTER_SPIT_NAME,[color=#{rarity}]Spit After Use Core[/color]
+NCRAFTERS_ATK_AFTER_SPIT_DESC,Adds [color=#2b9aeb][up to 90% Chance to use Spit after use][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_AUTO_USE_START_NAME,[color=#{rarity}]Auto Use Battle Start Core[/color]
+NCRAFTERS_AUTO_USE_START_DESC,Adds [color=#2b9aeb][up to 90% Chance to use at the start of battles][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_AUTO_USE_END_NAME,[color=#{rarity}]Auto Use Round End Core[/color]
+NCRAFTERS_AUTO_USE_END_DESC,Adds [color=#2b9aeb][up to 90% Chance to use at the end of a round][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_AUTO_USER_ATTACK_NAME,[color=#{rarity}]Auto Use After Attack Core[/color]
+NCRAFTERS_AUTO_USER_ATTACK_DESC,Adds [color=#2b9aeb][up to 25% Chance to use after attacks][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_AUTO_USER_HIT_NAME,[color=#{rarity}]Auto Use When Hit Core[/color]
+NCRAFTERS_AUTO_USER_HIT_DESC,Adds [color=#2b9aeb][up to 25% Chance to use when hit][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_BUFF_USER_CONTACTDMG_NAME,[color=#{rarity}]Contact Damage Core[/color]
+NCRAFTERS_BUFF_USER_CONTACTDMG_DESC,Adds [color=#2b9aeb][up to 50% Chance of Contact Damage Buff][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_BUFF_USER_NAME,[color=#{rarity}]Buff Core[/color]
+NCRAFTERS_BUFF_USER_DESC,Adds [color=#2b9aeb][up to 50% Chance of Buff][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_BUFF_USER_WALL_NAME,[color=#{rarity}]Wall Core[/color]
+NCRAFTERS_BUFF_USER_WALL_DESC,Adds [color=#2b9aeb][up to 50% Chance of Wall][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_COMPATIBILITY_NAME,[color=#{rarity}]Compatibility Core[/color]
+NCRAFTERS_COMPATIBILITY_DESC,Adds [color=#2b9aeb][Compatible with any tape][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_DEBUFF_TARGET_NAME,[color=#{rarity}]Debuff Core[/color]
+NCRAFTERS_DEBUFF_TARGET_DESC,Adds [color=#2b9aeb][up to 50% Chance of Debuff][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_DESTROYS_WALLS_NAME,[color=#{rarity}]Destroy Walls Core[/color]
+NCRAFTERS_DESTROYS_WALLS_DESC,Adds [color=#2b9aeb][Destroys walls][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_EXTRA_HIT_NAME,[color=#{rarity}]Extra Hit Core[/color]
+NCRAFTERS_EXTRA_HIT_DESC,Adds [color=#2b9aeb][+1 Extra Hit][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_HEAL_NAME,[color=#{rarity}]Heal Core[/color]
+NCRAFTERS_HEAL_DESC,Adds [color=#2b9aeb][Heals (up to) 10% of Max HP][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_IGNORES_WALLS_NAME,[color=#{rarity}]Ignore Walls Core[/color]
+NCRAFTERS_IGNORES_WALLS_DESC,Adds [color=#2b9aeb][Ignores walls][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_MULTITARGET_NAME,[color=#{rarity}]Multitarget Core[/color]
+NCRAFTERS_MULTITARGET_DESC,Adds [color=#2b9aeb][up to 75% Chance to target whole team][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SHARED_NAME,[color=#{rarity}]Shared Core[/color]
+NCRAFTERS_SHARED_DESC,Adds [color=#2b9aeb][Shared with allies][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_DAMAGE_NAME,[color=#{rarity}]Empty Slot Damage Core[/color]
+NCRAFTERS_SPECIALIZATION_DAMAGE_DESC,Adds [color=#2b9aeb][up to 10% Damage per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_EXP_NAME,[color=#{rarity}]Empty Slot Experience Core[/color]
+NCRAFTERS_SPECIALIZATION_EXP_DESC,Adds [color=#2b9aeb][up to 10% Exp per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_HEAL_NAME,[color=#{rarity}]Empty Slot Heal Core[/color]
+NCRAFTERS_SPECIALIZATION_HEAL_DESC,Adds [color=#2b9aeb][Heals (up to) 10% of Max HP per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_MOVE_ACCURACY_NAME,[color=#{rarity}]Empty Slot Accuracy Core[/color]
+NCRAFTERS_SPECIALIZATION_MOVE_ACCURACY_DESC,Adds [color=#2b9aeb][up to 20% Accuracy per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_MOVE_CRIT_DAMAGE_NAME,[color=#{rarity}]Empty Slot Crit Damage Core[/color]
+NCRAFTERS_SPECIALIZATION_MOVE_CRIT_DAMAGE_DESC,Adds [color=#2b9aeb][up to 50% Critical Damage per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_MOVE_CRIT_RATE_NAME,[color=#{rarity}]Empty Slot Crit Rate Core[/color]
+NCRAFTERS_SPECIALIZATION_MOVE_CRIT_RATE_DESC,Adds[color=#2b9aeb][up to 30% Critical Rate per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_MOVE_EFFECT_CHANCE_NAME,[color=#{rarity}]Empty Slot Effect Chance Core[/color]
+NCRAFTERS_SPECIALIZATION_MOVE_EFFECT_CHANCE_DESC,Adds [color=#2b9aeb][up to 20% Effect Chance per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_MOVE_SPLASH_NAME,[color=#{rarity}]Empty Slot Splash Damage Core[/color]
+NCRAFTERS_SPECIALIZATION_MOVE_SPLASH_DESC,Adds [color=#2b9aeb][up to 35% Splash Damage per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_ACCURACY_NAME,[color=#{rarity}]Empty Slot Passive Accuracy Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_ACCURACY_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Accuracy per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_EVASION_NAME,[color=#{rarity}]Empty Slot Passive Evasion Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_EVASION_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Evasion per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_MAX_HP_NAME,[color=#{rarity}]Empty Slot Max HP Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_MAX_HP_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Max HP per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_MELEE_ATK_NAME,[color=#{rarity}]Empty Slot Passive Melee Attack Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_MELEE_ATK_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Melee Attack per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_MELEE_DEFENSE_NAME,[color=#{rarity}]Empty Slot Passive Melee Defense Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_MELEE_DEFENSE_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Melee Defense per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_RANGED_DEFENSE_NAME,[color=#{rarity}]Empty Slot Passive Ranged Defense Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_RANGED_DEFENSE_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Ranged Defense per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_RANGED_ATTACK_NAME,[color=#{rarity}]Empty Slot Passive Ranged Attack Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_RANGED_ATTACK_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Ranged Attack per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PASSIVE_SPEED_NAME,[color=#{rarity}]Empty Slot Passive Speed Core[/color]
+NCRAFTERS_SPECIALIZATION_PASSIVE_SPEED_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Speed per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_SPECIALIZATION_PRIORITY_CHANCE_NAME,[color=#{rarity}]Empty Slot Priority Chance Core[/color]
+NCRAFTERS_SPECIALIZATION_PRIORITY_CHANCE_DESC,Adds [color=#2b9aeb][up to 30% Priority Chance per empty slot][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_STATUS_DURATION_BOOST_NAME,[color=#{rarity}]Status Duration Core[/color]
+NCRAFTERS_STATUS_DURATION_BOOST_DESC,Adds [color=#2b9aeb][+1 Duration][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_STAT_DAMAGE_NAME,[color=#{rarity}]Damage Core[/color]
+NCRAFTERS_STAT_DAMAGE_DESC,Adds [color=#2b9aeb][up to 20% Damage][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_STAT_EXP_NAME,[color=#{rarity}]Experience Core[/color]
+NCRAFTERS_STAT_EXP_DESC,Adds [color=#2b9aeb][up to 20% Exp][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ MOVE_ACCURARY_NAME,[color=#{rarity}]Accuracy Core[/color]
+NCRAFTERS_ MOVE_ACCURARY_DESC,Adds [color=#2b9aeb][up to 30% Accuracy][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ MOVE_CRIT_DAMAGE_NAME,[color=#{rarity}]Crit Damage Core[/color]
+NCRAFTERS_ MOVE_CRIT_DAMAGE_DESC,Adds [color=#2b9aeb][up to 100% Critical Damage][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ MOVE_CRIT_RATE_NAME,[color=#{rarity}]Crit Rate Core[/color]
+NCRAFTERS_ MOVE_CRIT_RATE_DESC,Adds [color=#2b9aeb][up to 50% Critical Rate][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ MOVE_EFFECT_CHANCE_NAME,[color=#{rarity}]Effect Chance Core[/color]
+NCRAFTERS_ MOVE_EFFECT_CHANCE_DESC,Adds [color=#2b9aeb][up to 30% Effect Chance][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ MOVE_SPLASH_DAMAGE_NAME,[color=#{rarity}]Splash Damage Core[/color]
+NCRAFTERS_ MOVE_SPLASH_DAMAGE_DESC,Adds [color=#2b9aeb][up to 70% Splash Damage][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_ACCURACY_NAME,[color=#{rarity}]Passive Accuracy Core[/color]
+NCRAFTERS_ STAT_PASSIVE_ACCURACY_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Accuracy][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_EVASION_NAME,[color=#{rarity}]Passive Evasion Core[/color]
+NCRAFTERS_ STAT_PASSIVE_EVASION_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Evasion][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_MAX_HP_NAME,[color=#{rarity}]Passive Max HP Core[/color]
+NCRAFTERS_ STAT_PASSIVE_MAX_HP_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Max HP][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_MELEE_ATTACK_NAME,[color=#{rarity}]Passive Melee Attack Core[/color]
+NCRAFTERS_ STAT_PASSIVE_MELEE_ATTACK_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Melee Attack][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_MELEE_DEFENSE_NAME,[color=#{rarity}]Passive Melee Defense Core[/color]
+NCRAFTERS_ STAT_PASSIVE_MELEE_DEFENSE_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Melee Defense][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_RANGED_ATTACK_NAME,[color=#{rarity}]Passive Ranged Attack Core[/color]
+NCRAFTERS_ STAT_PASSIVE_RANGED_ATTACK_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Ranged Attack][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_RANGED_DEFENSE_NAME,[color=#{rarity}]Passive Ranged Defense Core[/color]
+NCRAFTERS_ STAT_PASSIVE_RANGED_DEFENSE_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Ranged Defense][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PASSIVE_SPEED_NAME,[color=#{rarity}]Passive Speed Core[/color]
+NCRAFTERS_ STAT_PASSIVE_SPEED_DESC,Adds [color=#2b9aeb][Passive: (up to) 10% Speed][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ STAT_PRIORITY_CHANCE_NAME,[color=#{rarity}]Priority Chance Core[/color]
+NCRAFTERS_ STAT_PRIORITY_CHANCE_DESC,Adds [color=#2b9aeb][up to 30% Priority Chance][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ TYPE_ADVANTAGE_CRIT_NAME,[color=#{rarity}]Type Advantadge Crit Core[/color]
+NCRAFTERS_ TYPE_ADVANTAGE_CRIT_DESC,Adds [color=#2b9aeb][Critical hit on type advantage][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ USE_AGAIN_NAME,[color=#{rarity}]Use Again Core[/color]
+NCRAFTERS_ USE_AGAIN_DESC,Adds [color=#2b9aeb][up to 20% Chance to use twice][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_ USE_RANDOM_NAME,[color=#{rarity}]Use Random Core[/color]
+NCRAFTERS_ USE_RANDOM_DESC,Adds [color=#2b9aeb][up to 20% Chance to use a random move][/color] attribute when attached to a compatible sticker.
+NCRAFTERS_EFFECT_PROMPT,Choose Attribute:
+NCRAFTERS_MISSING_COST,Insufficient materials to complete this action.\nRequired Materials:\n[color=#{application_status}]{application_cost}[/color][img=0x52]{application_icon}[/img] - {application_name}\n[color=#{resource_status}]{resource_cost}[/color][img=0x52]{resource_icon}[/img] - {resource_name}\n[color=#{core_status}]{core_cost}[/color][img=0x52]{core_icon}[/img] - {core_name}
+NCRAFTERS_COST_PAID_COMPLETE,Attaching [color=#{rarity}][{effect}][/color] requires:\n{application_cost}[img=0x52]{application_icon}[/img] - {application_name}\n{resource_cost}[img=0x52]{resource_icon}[/img] - {resource_name}\n{core_cost}[img=0x52]{core_icon}[/img] - {core_name}\nProceed?
+NCRAFTERS_LOCKED_STICKER_UI,Locked
+NCRAFTERS_UNLOCKED_STICKER_UI,Unlocked
+NCRAFTERS_APPLY_EFFECT_UI,Apply Attributes ({resource}{cost})
+NCRAFTERS_STICKER_LOCKED_ERROR,Cannot recycle locked stickers
+NCRAFTERS_FAILED_CORE_ATTACH,You have failed to attach the Core!\nInsufficient materials left to retry.
+NCRAFTERS_EFFECT_VALUES_CLARIFICATION,Choose Attribute:\n[i]Note: Values are max possible values. Actual results are randomly assigned (if applicable).[/i]
+NCRAFTERS_UPGRADE_EFFECT_UI,Upgrade Attributes ({resource}{cost})
+NCRAFTERS_UPGRADE_PROMPT,Choose a potential effect to upgrade:
+NCRAFTERS_STICKER_UPGRADE_SUCCESS,Successfully upgraded from [color=#acc7c7][{old_effect}][/color] to [color=#46d854][{new_effect}][/color]!
+NCRAFTERS_FAILED_UPGRADE,"Rolled value [color=#acc7c7][{roll_value}][/color] was too low, the upgrade has failed!\nInsufficient materials for retry."
+NCRAFTERS_UPGRADE_COST_SUMMARY,Upgrading towards [color=#{rarity}][{effect}][/color] requires:\n{application_cost}[img=0x52]{application_icon}[/img] - {application_name}\n{resource_cost}[img=0x52]{resource_icon}[/img] - {resource_name}\n{core_cost}[img=0x52]{core_icon}[/img] - {core_name}.\nProceed?
+NCRAFTERS_RETRY_ATTACH,Attachment failed! Try again?\nRemaining resources:\n[img=0x52]{application_icon}[/img]{application_value}(-{application_cost})\n[img=0x52]{resource_icon}[/img]{resource_value}(-{resource_cost})\n[img=0x52]{core_icon}[/img]{core_value}(-{core_cost})
+NCRAFTERS_RETRY_UPGRADE,"Rolled value [color=#acc7c7][{roll_value}][/color] was too low, the upgrade has failed! Try Again?\nRemaining resources:\n[img=0x52]{application_icon}[/img]{application_value}(-{application_cost})\n[img=0x52]{resource_icon}[/img]{resource_value}(-{resource_cost})\n[img=0x52]{core_icon}[/img]{core_value}(-{core_cost})"
+NCRAFTERS_RETRY_CONFIRMED_UI,Retry
+NCRAFTERS_RETRY_REJECT_UI,Cancel
+NCRAFTERS_CONFIRM_UI,Confirm
+NCRAFTERS_CANCEL_UI,Cancel
+NCRAFTERS_REMOVE_EFFECT_UI,Remove Attributes ({resource}{cost})
+NCRAFTERS_REMOVAL_COST_SUMMARY,Removing [color=#46d854]{attribute}[/color] requires:\n{application_cost}[img=0x52]{application_icon}[/img] - {application_name}\n{upgrade_cost}[img=0x52]{upgrade_icon}[/img] - {upgrade_name}\nProceed?
+NCRAFTERS_REMOVAL_SUCCESS,Successfully removed attribute from sticker!
+NCRAFTERS_CORE_CRAFTING_TUTORIAL,"[color=#2b9aeb]Introducing Attribute Cores[/color]\nRecycling Rare/Uncommon stickers will yield Attribute Core items representing the attributes found on the recycled sticker. Attribute Cores allow you to modify your stickers by adding/upgrading the attributes on them, provided you can pay the resource costs associated with the attribute."
+NCRAFTERS_CORE_ATTACH_SUCCESSFUL,Successfully attached [color=#{rarity}][{effect}][/color] to sticker!
+NCRAFTERS_MISSING_REMOVAL_COST,Insufficient materials to complete this action.\nRequired Materials:\n[color=#{application_status}]{application_cost}[/color][img=0x52]{application_icon}[/img] - {application_name}\n[color=#{resource_status}]{resource_cost}[/color][img=0x52]{resource_icon}[/img] - {resource_name}
+NCRAFTERS_CORE_CRAFTING_TUTORIAL_2,"[color=#2b9aeb]New Sticker Interactions[/color]\nInteracting with stickers in your inventory or directly on your monster tape will display options to Apply, Upgrade, or Remove Attributes.\n[ul][color=#2b9aeb]Apply Attributes[/color]\n[i]Attempt to attach an applicable attribute to the sticker. Chance of success varies with each attribute. [/i][/ul]\n[ul][color=#2b9aeb]Upgrade Attributes[/color]\n[i]Re-roll an existing attribute's value, the upgrade is successful only if the new value is higher than the current value.[/i][/ul]\n[ul][color=#2b9aeb]Remove Attributes[/color]\n[i]Removes an existing attribute on your sticker. Success is guaranteed.[/i][/ul]"

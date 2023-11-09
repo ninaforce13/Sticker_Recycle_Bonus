@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mods/Sticker_Recycle_Bonus/scripts/StickerCoreSystem.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+core_placement_cost = 2000
+core_upgrade_cost = 1000
+core_removal_cost = 1500
+merchant_max_purchase = 100000
