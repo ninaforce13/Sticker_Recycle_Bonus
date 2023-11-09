@@ -1,4 +1,4 @@
-# Sticker Recycle Bonus
+# Description
 This mod adds some quality of life features to the sticker inventory and introduces a system to edit modifiers on your stickers.
 
 # Features
