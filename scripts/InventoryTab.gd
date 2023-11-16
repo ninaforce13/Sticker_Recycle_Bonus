@@ -1,4 +1,5 @@
-extends "res://menus/inventory/InventoryTab.gd"
+extends "res://menus/inventory/InventoryTab.gd" 
+
 
 func _is_filtered_out(item_node:Node)->bool:
 	if context is MonsterTape:
@@ -35,49 +36,20 @@ func _is_filtered_out(item_node:Node)->bool:
 		else :
 			if move.elemental_types[0].id != user_filter.type:
 				return true
-	
+
 	if user_filter.has("attribute"):
+		if typeof(user_filter.attribute) != TYPE_STRING:
+			return true	
 		if not (item_node.item is StickerItem):
 			return true
 		var has_attribute:bool = false
-		for attribute in item_node.item.attributes:
-			if attribute.script == user_filter.attribute.script:				
-				if user_filter.attribute.script == load("res://data/sticker_attribute_scripts/StatStickerAttribute.gd"):
-					if attribute.get("stat_name") == user_filter.attribute.stat_name and attribute.get("multiply_empty_sticker_slots") == user_filter.attribute.multiply_empty_sticker_slots:						
-						has_attribute = true
-						break					
-					continue
-				elif user_filter.attribute.script == load("res://data/sticker_attribute_scripts/HealStickerAttribute.gd"):
-					if attribute.script == load("res://data/sticker_attribute_scripts/HealStickerAttribute.gd") and attribute.get("multiply_empty_sticker_slots") == user_filter.attribute.multiply_empty_sticker_slots:						
-						has_attribute = true
-						break
-					continue
-				elif user_filter.attribute.script == load("res://data/sticker_attribute_scripts/AttackAfterUseStickerAttribute.gd"):
-					if attribute.get("move_path") == user_filter.attribute.move_path:						
-						has_attribute = true
-						break
-					continue
-				elif user_filter.attribute.script == load("res://data/sticker_attribute_scripts/APRefundStickerAttribute.gd"):
-					if attribute.get("amount") == user_filter.attribute.amount:						
-						has_attribute = true
-						break
-					continue										
-				elif attribute.get("stat_name") and user_filter.attribute.get("stat_name"):
-					if attribute.stat_name == user_filter.attribute.stat_name:
-						has_attribute = true
-						break
-					continue
-				elif attribute.get("condition") and user_filter.attribute.get("condition"):
-					if attribute.condition == user_filter.attribute.condition:
-						has_attribute = true
-						break
-					continue
-				
+		for attribute in item_node.item.attributes:					
+			if attribute.template_path == user_filter.attribute:				
 				has_attribute = true
 				break
 		if not has_attribute:
 			return true
-	
+
 	return false
 
 func bulk_recycle():
@@ -90,24 +62,10 @@ func bulk_recycle():
 					recyclables.push_back({"item":DLC.mods_by_id["sticker_recycle_bonus"].core_dictionary[core_id],"amount":item.amount})
 			item.recycle(null, recyclables)
 			
-
 	refresh()
 	if recyclables.size() > 0:
 		yield (MenuHelper.give_items(recyclables), "completed")
 	grab_focus()
-
-func drop_item(sticker, attribute)->bool:
-	var profile = sticker.battle_move.attribute_profile
-	var rand = Random.new()
-	var valid_attributes = profile.get_applicable_attributes(sticker.rarity, sticker.battle_move)
-	for _i in range(sticker.attributes.size()):
-		var attr = rand.weighted_choice(valid_attributes)
-		if attr == null:
-			break		
-		if attribute.template_path == attr.resource_path:
-			return true
-		valid_attributes.erase(attr)		
-	return false
 
 func vault_contains_sticker(sticker)->bool:
 	if not SaveState.other_data.has("stickervault"):
@@ -123,7 +81,7 @@ func get_item_key(sticker):
 	for attr in sticker.item.attributes:
 		 item_key = item_key + attr.template_path	
 	return item_key
-	
+
 func refresh(reapply_filter:bool = true):
 	if reapply_filter:
 		filtered_count = 0

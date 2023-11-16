@@ -7,21 +7,23 @@ var StickerCoreSystem = preload("res://mods/Sticker_Recycle_Bonus/StickerCoreSys
 
 export (Array, PackedScene) var title_popups:Array
 export (String) var title_popup_flag:String
-
+export var disable_in_editor:bool = false
 func on_title_screen():
-	
+	if OS.has_feature("editor") and disable_in_editor: 
+		return	
 	if title_popups.size() > 0 and not UserSettings.misc_data.has(title_popup_flag):
 		yield (MenuHelper.show_tutorial_box(name, title_popups), "completed")
 		UserSettings.misc_data[title_popup_flag] = true
 		UserSettings.save_settings()
 
 func init_content():
+	if OS.has_feature("editor") and disable_in_editor: 
+		return	 
 	if DLC.has_mod("cat_modutils", 15):
 		DLC.mods_by_id.cat_modutils.trans_patch.add_translation(preload("res://mods/Sticker_Recycle_Bonus/translations/mod_strings.en.translation"))
 	else:
 		rebuild_translations()
-		
-func _init():
+
 	var inventory_tabscript: Resource = preload("res://mods/Sticker_Recycle_Bonus/scripts/InventoryTab.gd")
 	inventory_tabscript.take_over_path("res://menus/inventory/InventoryTab.gd")
 	var filter_menu:Resource = preload("res://mods/Sticker_Recycle_Bonus/scenes/StickerFilterMenu.tscn")
@@ -76,7 +78,7 @@ func rebuild_translations():
 		TranslationServer.add_translation(translation.translations["en"])
 
 func build_sticker_attribute_list()->Dictionary:
-	var types = Datatables.load("res://data/elemental_types").table.values().duplicate()
+
 	var attribute_profiles = Datatables.load("res://data/sticker_attribute_profiles").table.values().duplicate()
 	var buffs = load("res://data/sticker_attributes/buff_user.tres").buffs.duplicate()
 	var debuffs = load("res://data/sticker_attributes/debuff_target.tres").debuffs.duplicate()

@@ -46,10 +46,10 @@ func get_core(effect)->BaseItem:
 func get_buff_cost(buff_array, effect, upgrade:bool = false, _removal:bool = false)->Dictionary:
 	for buff_data in buff_array:
 		if effect.get("buffs"):
-			if buff_data.buff == effect.buffs[0]:
+			if buff_data.buff == effect.buff:
 				return {"material":buff_data.resource,"cost":buff_data.cost if not upgrade else buff_data.upgrade_cost}
 		if effect.get("debuffs"):
-			if buff_data.buff == effect.debuffs[0]:
+			if buff_data.buff == effect.debuff:
 				return {"material":buff_data.resource,"cost":buff_data.cost if not upgrade else buff_data.upgrade_cost}			
 	return {"material":null,"cost":0}
 
@@ -90,6 +90,10 @@ func upgrade_roll(effect:StickerAttribute, move):
 	var potential_upgrade:StickerAttribute = effect.duplicate()
 	potential_upgrade.template_path = effect.template_path
 	potential_upgrade.generate(move, Random.new())
+	if potential_upgrade.template_path == "res://data/sticker_attributes/buff_user.tres":
+		potential_upgrade.buff = effect.buff	
+	if potential_upgrade.template_path == "res://data/sticker_attributes/debuff_target.tres":
+		potential_upgrade.debuff = effect.debuff	
 	return potential_upgrade
 
 func upgrade_effect(sticker, upgrade):
@@ -109,6 +113,12 @@ func attribute_matches(attribute_a, attribute_b)->bool:
 		
 		if attribute_a.script == load("res://data/sticker_attribute_scripts/HealStickerAttribute.gd"):
 			return attribute_a.multiply_empty_sticker_slots == attribute_b.multiply_empty_sticker_slots						
+
+		if attribute_a.template_path == "res://data/sticker_attributes/buff_user.tres" and attribute_b.template_path == "res://data/sticker_attributes/buff_user.tres":
+			return attribute_a.buff == attribute_b.buff
+			
+		if attribute_a.template_path == "res://data/sticker_attributes/debuff_target.tres" and attribute_b.template_path == "res://data/sticker_attributes/debuff_target.tres":
+			return attribute_a.debuff == attribute_b.debuff		
 			
 		if attribute_a.get("amount") and attribute_b.get("amount"):
 			return attribute_a.amount == attribute_b.amount
@@ -118,12 +128,7 @@ func attribute_matches(attribute_a, attribute_b)->bool:
 			
 		if attribute_a.get("move_path") and attribute_b.get("move_path"):
 			return attribute_a == attribute_b.move_path
-			
-		if attribute_a.get("buff") and attribute_b.get("buff"):
-			return attribute_a.buff == attribute_b.buff
-			
-		if attribute_a.get("debuff") and attribute_b.get("debuff"):
-			return attribute_a.debuff == attribute_b.debuff
+		
 		return true
 	return false
 	
@@ -172,8 +177,12 @@ func is_upgradable(attribute)->bool:
 
 func get_max_potential_effect(sticker, effect):
 	var potential_effect = effect.duplicate()
-	potential_effect.template_path = effect.template_path
+	potential_effect.template_path = effect.template_path	
 	potential_effect.generate(sticker.battle_move, Random.new())
+	if potential_effect.template_path == "res://data/sticker_attributes/buff_user.tres":
+		potential_effect.buff = effect.buff	
+	if potential_effect.template_path == "res://data/sticker_attributes/debuff_target.tres":
+		potential_effect.debuff = effect.debuff
 	if potential_effect.get("chance"):
 		potential_effect.chance = potential_effect.chance_max
 	if potential_effect.get("stat_value"):

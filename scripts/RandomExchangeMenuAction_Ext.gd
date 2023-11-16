@@ -1,5 +1,5 @@
 extends RandomExchangeMenuAction
-
+ 
 var StickerCoreSystem = DLC.mods_by_id["sticker_recycle_bonus"].StickerCoreSystem
 func generate_exchange(item:BaseItem, rand:Random)->Exchange:
 	var merchant_max_purchase = StickerCoreSystem.merchant_max_purchase

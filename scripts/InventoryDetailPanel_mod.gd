@@ -127,7 +127,7 @@ func grab_focus():
 	discard.connect("pressed", self, "_on_discard_pressed")			
 	buttons.add_child(discard)
 
-	if item_node.get_category() == "stickers":		
+	if item_node.get_category() == "stickers":
 		initialize_otherdata()	
 
 		var bonus_button = Button.new()		
@@ -203,10 +203,8 @@ func _on_RecycleBox_value_chosen(amount):
 	
 	var recyclables = item_node.recycle(amount)
 
-	var rand = Random.new()
 	if item_node.get_category() == "stickers": 
 		for attribute in item_node.item.attributes:			
-			var dictest:Dictionary			
 			if DLC.mods_by_id["sticker_recycle_bonus"].searchable_cores.has(attribute.template_path):
 				var core_id = DLC.mods_by_id["sticker_recycle_bonus"].searchable_cores[attribute.template_path]			
 				recyclables.push_back({"item":DLC.mods_by_id["sticker_recycle_bonus"].core_dictionary[core_id],"amount":amount})
@@ -363,7 +361,7 @@ func _on_upgrade_button_pressed(_button):
 			})
 			if yield(StickerCoreSystem.confirm_action(cost_paid_msg,"NCRAFTERS_CONFIRM_UI","NCRAFTERS_CANCEL_UI"),"completed"):
 				upgrade = StickerCoreSystem.upgrade_roll(effect,item_node.item.battle_move)
-				effect_to_upgrade		
+	
 				for attr in item_node.item.attributes:
 					if StickerCoreSystem.attribute_matches(attr,upgrade):
 						effect_to_upgrade = attr

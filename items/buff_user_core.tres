@@ -28,7 +28,6 @@
 [ext_resource path="res://data/items/olive_up.tres" type="Resource" id=27]
 [ext_resource path="res://data/items/old_book.tres" type="Resource" id=28]
 
-
 [resource]
 script = ExtResource( 3 )
 name = "NCRAFTERS_BUFF_USER_NAME"
@@ -39,8 +38,8 @@ category = "resources"
 base_stack_limit = 0
 stack_limit_category = ""
 consume_on_use = false
-discardable = true
-value = 1
+discardable = false
+value = 1000
 usable_contexts = 0
 battle_usage = 0
 sort_order = 0

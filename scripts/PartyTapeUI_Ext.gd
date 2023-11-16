@@ -196,7 +196,7 @@ func upgrade_effect(index:int):
 				})
 				if yield(StickerCoreSystem.confirm_action(cost_paid_msg,"NCRAFTERS_CONFIRM_UI","NCRAFTERS_CANCEL_UI"),"completed"):
 					upgrade = StickerCoreSystem.upgrade_roll(effect,tape.stickers[index].battle_move)
-					effect_to_upgrade		
+		
 					for attr in tape.stickers[index].attributes:
 						if StickerCoreSystem.attribute_matches(attr,upgrade):
 							effect_to_upgrade = attr
