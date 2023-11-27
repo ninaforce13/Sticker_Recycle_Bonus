@@ -229,8 +229,8 @@ func _on_craft_button_pressed(_button):
 			var cost_paid_msg = Loc.trf("NCRAFTERS_COST_PAID_COMPLETE", {
 				"rarity":StickerCoreSystem.get_html_color(effect),
 				"effect":effect.get_description(item_node.item.battle_move),
-				"core_name":StickerCoreSystem.get_core(effect).get_clean_name(Color.white.to_html()),
-				"core_icon":StickerCoreSystem.get_core(effect).icon.resource_path,
+				"core_name":materials_cost.core.get_clean_name(Color.white.to_html()),
+				"core_icon":materials_cost.core.icon.resource_path,
 				"core_cost":materials_cost.core_cost,
 				"resource_icon":materials_cost.material.icon.resource_path,
 				"resource_cost":materials_cost.cost,

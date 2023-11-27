@@ -46,10 +46,10 @@ func get_core(effect)->BaseItem:
 func get_buff_cost(buff_array, effect, upgrade:bool = false, _removal:bool = false)->Dictionary:
 	for buff_data in buff_array:
 		if effect.get("buffs"):
-			if buff_data.buff == effect.buff:
+			if buff_data.buff.name == effect.buff.name:
 				return {"material":buff_data.resource,"cost":buff_data.cost if not upgrade else buff_data.upgrade_cost}
 		if effect.get("debuffs"):
-			if buff_data.buff == effect.debuff:
+			if buff_data.buff.name == effect.debuff.name:
 				return {"material":buff_data.resource,"cost":buff_data.cost if not upgrade else buff_data.upgrade_cost}			
 	return {"material":null,"cost":0}
 
@@ -157,6 +157,31 @@ func apply_effect(sticker, effect):
 	var new_instance = effect.duplicate()
 	new_instance.template_path = effect.template_path
 	new_instance.generate(sticker.battle_move, Random.new())
+	if new_instance.get("buff") != null:
+		var buff_index:int = 0
+		new_instance.buff = effect.buff
+		for buff in new_instance.buffs:
+			if buff.name == new_instance.buff.name:
+				break
+			buff_index += 1
+		if buff_index < new_instance.varied_amounts.size():
+			new_instance.amount = new_instance.varied_amounts[buff_index]
+		else :
+			new_instance.amount = new_instance.default_amount				
+		new_instance.buff.resource_path = effect.buff.resource_path
+	if new_instance.get("debuff") != null:
+		var debuff_index:int = 0
+		new_instance.debuff = effect.debuff
+		for debuff in new_instance.debuffs:
+			if debuff.name == new_instance.debuff.name:
+				break
+			debuff_index += 1
+		if debuff_index < new_instance.varied_amounts.size():
+			new_instance.amount = new_instance.varied_amounts[debuff_index]
+		else :
+			new_instance.amount = new_instance.default_amount
+			
+		new_instance.debuff.resource_path = effect.debuff.resource_path
 	sticker.attributes.push_back(new_instance)
 	sticker.set_attributes(sticker.attributes)
 
@@ -249,15 +274,14 @@ func choose_effect(sticker,upgradable_effects:bool = false):
 				continue
 			if attr.rarity == BaseItem.Rarity.RARITY_UNCOMMON and get_sticker_potential(sticker).uncommon_full:
 				continue			
-			if attr.is_applicable_to(battle_move) and has_core(attr):
-				modded_attributes.push_back(attr)		
-	
+			if attr.is_applicable_to(battle_move) and has_core(attr):				
+				modded_attributes.push_back(attr)
+	var stored_buff
 	for mod_attribute in modded_attributes:					
 		var attach_rate = get_core(mod_attribute).drop_chance 
 		var display_rate = " ("+str(attach_rate-5) +"%"+ ")" if not upgradable_effects else ""
 		var html_color = rare_color if mod_attribute.rarity == BaseItem.Rarity.RARITY_RARE else uncommon_color
 		if mod_attribute.has_method("generate"):
-			mod_attribute.generate(battle_move, Random.new())
 			if mod_attribute.get("chance") != null:
 				mod_attribute.chance = mod_attribute.chance_max
 			if mod_attribute.get("stat_value") != null:
