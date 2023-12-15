@@ -115,10 +115,11 @@ func attribute_matches(attribute_a, attribute_b)->bool:
 			return attribute_a.multiply_empty_sticker_slots == attribute_b.multiply_empty_sticker_slots						
 
 		if attribute_a.template_path == "res://data/sticker_attributes/buff_user.tres" and attribute_b.template_path == "res://data/sticker_attributes/buff_user.tres":
-			return attribute_a.buff == attribute_b.buff
+			return attribute_a.buff.resource_path == attribute_b.buff.resource_path
 			
 		if attribute_a.template_path == "res://data/sticker_attributes/debuff_target.tres" and attribute_b.template_path == "res://data/sticker_attributes/debuff_target.tres":
-			return attribute_a.debuff == attribute_b.debuff		
+			print(attribute_a.debuff.resource_path + " matches " + attribute_b.debuff.resource_path + ": " + str(attribute_a.debuff.resource_path == attribute_b.debuff.resource_path))
+			return attribute_a.debuff.resource_path == attribute_b.debuff.resource_path		
 			
 		if attribute_a.get("amount") and attribute_b.get("amount"):
 			return attribute_a.amount == attribute_b.amount
@@ -276,7 +277,7 @@ func choose_effect(sticker,upgradable_effects:bool = false):
 				continue			
 			if attr.is_applicable_to(battle_move) and has_core(attr):				
 				modded_attributes.push_back(attr)
-	var stored_buff
+
 	for mod_attribute in modded_attributes:					
 		var attach_rate = get_core(mod_attribute).drop_chance 
 		var display_rate = " ("+str(attach_rate-5) +"%"+ ")" if not upgradable_effects else ""

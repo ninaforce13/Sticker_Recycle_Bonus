@@ -4,9 +4,15 @@ var core_dictionary:Dictionary
 var searchable_cores:Dictionary		
 var attribute_dictionary:Dictionary
 var StickerCoreSystem = preload("res://mods/Sticker_Recycle_Bonus/StickerCoreSystem.tres")
+var inventorydetailpanel_patch = preload("res://mods/Sticker_Recycle_Bonus/scripts/InventoryDetailPanel_patch.gd")
+var inventorymenu_patch = preload("res://mods/Sticker_Recycle_Bonus/scripts/InventoryMenu_patch.gd")
+var partytapeui_patch = preload("res://mods/Sticker_Recycle_Bonus/scripts/PartyTapeUI_patch.gd")
+var randomexchangemenu_patch = preload("res://mods/Sticker_Recycle_Bonus/scripts/RandomExchangeMenu_patch.gd")
+var inventorytab_patch = preload("res://mods/Sticker_Recycle_Bonus/scripts/InventoryTab_patch.gd")
 
 export (Array, PackedScene) var title_popups:Array
 export (String) var title_popup_flag:String
+
 func on_title_screen():
 	if title_popups.size() > 0 and not UserSettings.misc_data.has(title_popup_flag):
 		yield (MenuHelper.show_tutorial_box(name, title_popups), "completed")
@@ -20,16 +26,11 @@ func init_content():
 		rebuild_translations()
 
 func _init():
-	var inventory_tabscript: Resource = preload("res://mods/Sticker_Recycle_Bonus/scripts/InventoryTab.gd")
-	inventory_tabscript.take_over_path("res://menus/inventory/InventoryTab.gd")
-	var filter_menu:Resource = preload("res://mods/Sticker_Recycle_Bonus/scenes/StickerFilterMenu.tscn")
-	filter_menu.take_over_path("res://menus/inventory/StickerFilterMenu.tscn")
-	var detail_panel:Resource = preload("res://mods/Sticker_Recycle_Bonus/scenes/InventoryDetailPanel.tscn")
-	detail_panel.take_over_path("res://menus/inventory/InventoryDetailPanel.tscn")
-	var partytapeui_ext:Resource = preload("res://mods/Sticker_Recycle_Bonus/scripts/PartyTapeUI_Ext.gd")
-	partytapeui_ext.take_over_path("res://menus/party_tape/PartyTapeUI.gd")
-	var randomexchangemenu:Resource = preload("res://mods/Sticker_Recycle_Bonus/scripts/RandomExchangeMenuAction_Ext.gd")
-	randomexchangemenu.take_over_path("res://nodes/actions/RandomExchangeMenuAction.gd")
+	inventorytab_patch.patch()
+	inventorymenu_patch.patch()
+	inventorydetailpanel_patch.patch()
+	partytapeui_patch.patch()
+	randomexchangemenu_patch.patch()
 	
 	register_commands()
 	
@@ -201,7 +202,6 @@ func rebuild_translations():
 									load("res://translation/strings_release.en.translation")
 									]	
 	var csvFile:File = File.new()		
-	var output:File = File.new()
 	var datafiles:Array = []
 	var import_translations:Array = []
 	
