@@ -1,4 +1,4 @@
-static func patch():	
+static func patch():
 	var script_path = "res://menus/inventory/InventoryDetailPanel.gd"
 	var patched_script : GDScript = preload("res://menus/inventory/InventoryDetailPanel.gd")
 
@@ -6,29 +6,29 @@ static func patch():
 		var file : File = File.new()
 		var err = file.open(script_path, File.READ)
 		if err != OK:
-			push_error("Check that %s is included in Modified Files"% script_path) 
+			push_error("Check that %s is included in Modified Files"% script_path)
 			return
 		patched_script.source_code = file.get_as_text()
 		file.close()
-	
-	var code_lines:Array = patched_script.source_code.split("\n")	
-	
+
+	var code_lines:Array = patched_script.source_code.split("\n")
+
 	var code_index:int = code_lines.find("var immediate_item_use:bool = true")
 	if code_index >= 0:
 		code_lines.insert(code_index+1,get_code("core_declaration"))
-	
+
 	code_index = code_lines.find("	buttons.add_child(discard)")
 	if code_index >= 0:
 		code_lines.insert(code_index+1,get_code("grab_focus"))
-	
+
 	code_index = code_lines.find("func _on_RecycleBox_focus_entered():")
 	if code_index >= 0:
 		code_lines.insert(code_index+1,get_code("on_RecycleBox_focus_entered"))
-	
+
 	code_index = code_lines.find("	var recyclables = item_node.recycle(amount)")
 	if code_index >= 0:
 		code_lines.insert(code_index+1,get_code("on_RecycleBox_value_chosen"))
-	
+
 	code_lines.insert(code_lines.size() - 1,get_code("new_functions"))
 
 	patched_script.source_code = ""
@@ -38,56 +38,55 @@ static func patch():
 	if err != OK:
 		push_error("Failed to patch %s." % script_path)
 		return
-	print("Patched %s successfully." % script_path)	
 
-	
+
 static func get_code(block_name:String)->String:
 	var blocks:Dictionary = {}
 	blocks["core_declaration"] = """
-var StickerCoreSystem = preload("res://mods/Sticker_Recycle_Bonus/StickerCoreSystem.tres")	
+var StickerCoreSystem = preload("res://mods/Sticker_Recycle_Bonus/StickerCoreSystem.tres")
 	"""
-	
+
 	blocks["grab_focus"] = """
 	if item_node.get_category() == "stickers":
-		initialize_otherdata()	
+		initialize_otherdata()
 
-		var bonus_button = Button.new()		
+		var bonus_button = Button.new()
 		var label = discard.get_node("Label").duplicate()
 		bonus_button.add_child(label)
 		var label_text = Loc.trf("NCRAFTERS_APPLY_EFFECT_UI",{
 			"resource":"[font=res://addons/platform/input_icons/bbcode_img_font.tres][img=0x52.5]res://sprites/items/pulp.png[/img][/font]",
 			"cost":StickerCoreSystem.core_placement_cost
 		})
-		label.bbcode_text = "[center]" + label_text + "[/center]"		
+		label.bbcode_text = "[center]" + label_text + "[/center]"
 		bonus_button.connect("pressed", self, "_on_craft_button_pressed", [bonus_button])
 		buttons.add_child(bonus_button)
-		
-		var upgrade_button = Button.new()		
+
+		var upgrade_button = Button.new()
 		var upgrade_label = discard.get_node("Label").duplicate()
 		upgrade_button.add_child(upgrade_label)
 		var label_text_2 = Loc.trf("NCRAFTERS_UPGRADE_EFFECT_UI",{
 			"resource":"[font=res://addons/platform/input_icons/bbcode_img_font.tres][img=0x52.5]res://sprites/items/pulp.png[/img][/font]",
 			"cost":StickerCoreSystem.core_upgrade_cost
 		})
-		upgrade_label.bbcode_text = "[center]" + label_text_2 + "[/center]"		
+		upgrade_label.bbcode_text = "[center]" + label_text_2 + "[/center]"
 		upgrade_button.connect("pressed", self, "_on_upgrade_button_pressed", [upgrade_button])
 		buttons.add_child(upgrade_button)
-		
-		var remove_button = Button.new()		
+
+		var remove_button = Button.new()
 		var remove_label = discard.get_node("Label").duplicate()
 		remove_button.add_child(remove_label)
 		var remove_label_text = Loc.trf("NCRAFTERS_REMOVE_EFFECT_UI",{
 			"resource":"[font=res://addons/platform/input_icons/bbcode_img_font.tres][img=0x52.5]res://sprites/items/pulp.png[/img][/font]",
 			"cost":StickerCoreSystem.core_removal_cost
 		})
-		remove_label.bbcode_text = "[center]" + remove_label_text + "[/center]"		
+		remove_label.bbcode_text = "[center]" + remove_label_text + "[/center]"
 		remove_button.connect("pressed", self, "_on_remove_button_pressed", [remove_button])
-		buttons.add_child(remove_button)		
-		
+		buttons.add_child(remove_button)
+
 		var deposit_button = Button.new()
 		deposit_button.add_color_override("font_color", Color.gray)
 		deposit_button.add_color_override("font_color_focus", Color.gray)
-		deposit_button.text = "NCRAFTERS_UNLOCKED_STICKER_UI"				
+		deposit_button.text = "NCRAFTERS_UNLOCKED_STICKER_UI"
 
 		if vault_contains_sticker(item):
 			deposit_button.text = "NCRAFTERS_LOCKED_STICKER_UI"
@@ -99,17 +98,17 @@ var StickerCoreSystem = preload("res://mods/Sticker_Recycle_Bonus/StickerCoreSys
 """
 	blocks["on_RecycleBox_focus_entered"] = """
 	if vault_contains_sticker(item) and item is StickerItem:
-		yield (GlobalMessageDialog.show_message("NCRAFTERS_STICKER_LOCKED_ERROR", true, true), "completed")			
+		yield (GlobalMessageDialog.show_message("NCRAFTERS_STICKER_LOCKED_ERROR", true, true), "completed")
 		_on_cancel_button_pressed()
-		return				
+		return
 	"""
 	blocks["on_RecycleBox_value_chosen"] = """
-	if item_node.get_category() == "stickers": 
-		for attribute in item_node.item.attributes:			
+	if item_node.get_category() == "stickers":
+		for attribute in item_node.item.attributes:
 			if DLC.mods_by_id["sticker_recycle_bonus"].searchable_cores.has(attribute.template_path):
-				var core_id = DLC.mods_by_id["sticker_recycle_bonus"].searchable_cores[attribute.template_path]			
+				var core_id = DLC.mods_by_id["sticker_recycle_bonus"].searchable_cores[attribute.template_path]
 				recyclables.push_back({"item":DLC.mods_by_id["sticker_recycle_bonus"].core_dictionary[core_id],"amount":amount})
-				
+
 	"""
 	blocks["new_functions"] = """
 func initialize_otherdata():
@@ -120,10 +119,10 @@ func _on_craft_button_pressed(_button):
 	var effect = yield (StickerCoreSystem.choose_effect(item_node.item),"completed")
 	var fail_msg:String
 	var retrying:bool = false
-	var materials_cost	
+	var materials_cost
 	if effect != null:
-		if StickerCoreSystem.has_core(effect) and StickerCoreSystem.has_material_cost(effect):		
-			materials_cost = StickerCoreSystem.get_material_cost(effect)					
+		if StickerCoreSystem.has_core(effect) and StickerCoreSystem.has_material_cost(effect):
+			materials_cost = StickerCoreSystem.get_material_cost(effect)
 			var cost_paid_msg = Loc.trf("NCRAFTERS_COST_PAID_COMPLETE", {
 				"rarity":StickerCoreSystem.get_html_color(effect),
 				"effect":effect.get_description(item_node.item.battle_move),
@@ -136,10 +135,10 @@ func _on_craft_button_pressed(_button):
 				"application_name":materials_cost.application_material.name,
 				"application_cost":materials_cost.application_cost,
 				"application_icon":materials_cost.application_material.icon.resource_path,
-				
+
 			})
 			if yield(StickerCoreSystem.confirm_action(cost_paid_msg, "NCRAFTERS_CONFIRM_UI","NCRAFTERS_CANCEL_UI"),"completed"):
-				if StickerCoreSystem.core_success_roll_v2(item_node.item, effect):								
+				if StickerCoreSystem.core_success_roll_v2(item_node.item, effect):
 					var new_sticker = ItemFactory.create_sticker(item_node.item.battle_move,null,0)
 					new_sticker.set_attributes(item_node.item.attributes.duplicate())
 					StickerCoreSystem.apply_effect(new_sticker, effect)
@@ -149,12 +148,12 @@ func _on_craft_button_pressed(_button):
 					emit_signal("item_discarded", item_node, 1)
 				else:
 					StickerCoreSystem.pay_material_cost(effect)
-					
+
 					if not StickerCoreSystem.has_material_cost(effect):
 						yield(GlobalMessageDialog.show_message("NCRAFTERS_FAILED_CORE_ATTACH"),"completed")
 						_on_cancel_button_pressed()
 						return
-					materials_cost = StickerCoreSystem.get_material_cost(effect)	
+					materials_cost = StickerCoreSystem.get_material_cost(effect)
 					fail_msg = Loc.trf("NCRAFTERS_RETRY_ATTACH",{
 						"application_icon":materials_cost.application_material.icon.resource_path,
 						"resource_icon":materials_cost.material.icon.resource_path,
@@ -165,11 +164,11 @@ func _on_craft_button_pressed(_button):
 						"resource_value":SaveState.inventory.get_item_amount(materials_cost.material),
 						"core_value":SaveState.inventory.get_item_amount(materials_cost.core),
 						"core_cost":materials_cost.core_cost
-					})					
-					
+					})
+
 					retrying = yield(StickerCoreSystem.confirm_action(fail_msg),"completed")
-					while retrying:						
-						if StickerCoreSystem.core_success_roll_v2(item_node.item, effect):								
+					while retrying:
+						if StickerCoreSystem.core_success_roll_v2(item_node.item, effect):
 							var new_sticker = ItemFactory.create_sticker(item_node.item.battle_move,null,0)
 							new_sticker.set_attributes(item_node.item.attributes.duplicate())
 							StickerCoreSystem.apply_effect(new_sticker, effect)
@@ -185,7 +184,7 @@ func _on_craft_button_pressed(_button):
 								yield(GlobalMessageDialog.show_message("NCRAFTERS_FAILED_CORE_ATTACH"),"completed")
 								retrying = false
 								break
-							materials_cost = StickerCoreSystem.get_material_cost(effect)	
+							materials_cost = StickerCoreSystem.get_material_cost(effect)
 							fail_msg = Loc.trf("NCRAFTERS_RETRY_ATTACH",{
 								"application_icon":materials_cost.application_material.icon.resource_path,
 								"resource_icon":materials_cost.material.icon.resource_path,
@@ -199,7 +198,7 @@ func _on_craft_button_pressed(_button):
 							})
 							retrying = yield(StickerCoreSystem.confirm_action(fail_msg),"completed")
 		else:
-			yield(GlobalMessageDialog.show_message(StickerCoreSystem.get_insufficient_material_msg(effect)),"completed")		
+			yield(GlobalMessageDialog.show_message(StickerCoreSystem.get_insufficient_material_msg(effect)),"completed")
 	_on_cancel_button_pressed()
 
 func _on_remove_button_pressed(_button):
@@ -217,14 +216,14 @@ func _on_remove_button_pressed(_button):
 					"upgrade_icon":material_costs.material.icon.resource_path
 				})
 			if yield(StickerCoreSystem.confirm_action(cost_paid_msg,"NCRAFTERS_CONFIRM_UI","NCRAFTERS_CANCEL_UI"),"completed"):
-				var new_sticker = item_node.item.duplicate()				
+				var new_sticker = item_node.item.duplicate()
 				StickerCoreSystem.remove_effect(new_sticker, effect)
 				yield(MenuHelper.give_item(new_sticker,1,false),"completed")
-				SaveState.inventory.consume_item(item_node.item,1)													
+				SaveState.inventory.consume_item(item_node.item,1)
 				StickerCoreSystem.pay_material_cost(effect,false,true)
 				yield(GlobalMessageDialog.show_message("NCRAFTERS_REMOVAL_SUCCESS"),"completed")
 				emit_signal("item_discarded", item_node, 1) #Forces a refresh but doesnt actually remove the item
-				
+
 		else:
 			yield(GlobalMessageDialog.show_message(StickerCoreSystem.get_insufficient_material_msg(effect,false,true)),"completed")
 	_on_cancel_button_pressed()
@@ -238,7 +237,7 @@ func _on_upgrade_button_pressed(_button):
 	var upgrade
 	var retrying:bool = false
 	var materials_cost
-	
+
 	if effect != null:
 		if StickerCoreSystem.has_material_cost(effect, true):
 			var potential_effect = StickerCoreSystem.get_max_potential_effect(item_node.item,effect)
@@ -255,22 +254,22 @@ func _on_upgrade_button_pressed(_button):
 				"application_name":materials_cost.application_material.name,
 				"application_cost":materials_cost.application_cost,
 				"application_icon":materials_cost.application_material.icon.resource_path
-				
+
 			})
 			if yield(StickerCoreSystem.confirm_action(cost_paid_msg,"NCRAFTERS_CONFIRM_UI","NCRAFTERS_CANCEL_UI"),"completed"):
 				upgrade = StickerCoreSystem.upgrade_roll(effect,item_node.item.battle_move)
-	
+
 				for attr in item_node.item.attributes:
 					if StickerCoreSystem.attribute_matches(attr,upgrade):
 						effect_to_upgrade = attr
 						break
 				old_value = effect_to_upgrade.get_description(item_node.item.battle_move)
 				new_value = upgrade.get_description(item_node.item.battle_move)
-				if StickerCoreSystem.is_effect_upgraded(upgrade, effect_to_upgrade):					
+				if StickerCoreSystem.is_effect_upgraded(upgrade, effect_to_upgrade):
 					var new_sticker = item_node.item.duplicate()
 					StickerCoreSystem.upgrade_effect(new_sticker, upgrade)
 					yield(MenuHelper.give_item(new_sticker,1,false),"completed")
-					SaveState.inventory.consume_item(item_node.item,1)					
+					SaveState.inventory.consume_item(item_node.item,1)
 					var sticker_change_msg = Loc.trf("NCRAFTERS_STICKER_UPGRADE_SUCCESS",{
 						"old_effect":old_value,
 						"new_effect":new_value
@@ -279,8 +278,8 @@ func _on_upgrade_button_pressed(_button):
 					StickerCoreSystem.pay_material_cost(effect, true)
 					emit_signal("item_discarded", item_node, 1)
 				else:
-					StickerCoreSystem.pay_material_cost(effect, true)														
-						
+					StickerCoreSystem.pay_material_cost(effect, true)
+
 					if not StickerCoreSystem.has_material_cost(effect, true):
 						fail_msg = Loc.trf("NCRAFTERS_FAILED_UPGRADE",{
 							"roll_value":new_value
@@ -288,7 +287,7 @@ func _on_upgrade_button_pressed(_button):
 						yield(GlobalMessageDialog.show_message(fail_msg),"completed")
 						_on_cancel_button_pressed()
 						return
-					materials_cost = StickerCoreSystem.get_material_cost(effect, true)	
+					materials_cost = StickerCoreSystem.get_material_cost(effect, true)
 					fail_msg = Loc.trf("NCRAFTERS_RETRY_UPGRADE",{
 						"roll_value":new_value,
 						"application_icon":materials_cost.application_material.icon.resource_path,
@@ -301,17 +300,17 @@ func _on_upgrade_button_pressed(_button):
 						"core_value":SaveState.inventory.get_item_amount(materials_cost.core),
 						"core_cost":materials_cost.core_cost
 					})
-					retrying = yield(StickerCoreSystem.confirm_action(fail_msg),"completed")					
-					
+					retrying = yield(StickerCoreSystem.confirm_action(fail_msg),"completed")
+
 					while retrying:
 						upgrade = StickerCoreSystem.upgrade_roll(effect,item_node.item.battle_move)
 						new_value = upgrade.get_description(item_node.item.battle_move)
-						
-						if StickerCoreSystem.is_effect_upgraded(upgrade, effect_to_upgrade):	
+
+						if StickerCoreSystem.is_effect_upgraded(upgrade, effect_to_upgrade):
 							var new_sticker = item_node.item.duplicate()
 							StickerCoreSystem.upgrade_effect(new_sticker, upgrade)
 							yield(MenuHelper.give_item(new_sticker,1,false),"completed")
-							SaveState.inventory.consume_item(item_node.item,1)					
+							SaveState.inventory.consume_item(item_node.item,1)
 							var sticker_change_msg = Loc.trf("NCRAFTERS_STICKER_UPGRADE_SUCCESS",{
 								"old_effect":old_value,
 								"new_effect":new_value
@@ -322,7 +321,7 @@ func _on_upgrade_button_pressed(_button):
 							retrying = false
 							break
 						else:
-							StickerCoreSystem.pay_material_cost(effect, true)							
+							StickerCoreSystem.pay_material_cost(effect, true)
 							if not StickerCoreSystem.has_material_cost(effect, true):
 								retrying = false
 								fail_msg = Loc.trf("NCRAFTERS_FAILED_UPGRADE",{
@@ -344,7 +343,7 @@ func _on_upgrade_button_pressed(_button):
 								"core_cost":materials_cost.core_cost
 							})
 							retrying = yield(StickerCoreSystem.confirm_action(fail_msg),"completed")
-							
+
 		else:
 			yield(GlobalMessageDialog.show_message(StickerCoreSystem.get_insufficient_material_msg(effect, true)),"completed")
 	_on_cancel_button_pressed()
@@ -354,12 +353,12 @@ func _on_deposit_button_pressed(button):
 	var matching_stickers = []
 	matching_stickers.append({node = item_node, item = item})
 
-	for sticker_dict in matching_stickers:			
+	for sticker_dict in matching_stickers:
 		if vault_contains_sticker(sticker_dict.item):
 			if remove_sticker_from_vault(sticker_dict.item):
-				button.text = "NCRAFTERS_UNLOCKED_STICKER_UI"				
+				button.text = "NCRAFTERS_UNLOCKED_STICKER_UI"
 				button.add_color_override("font_color_focus", Color.gray)
-				button.add_color_override("font_color", Color.gray)				
+				button.add_color_override("font_color", Color.gray)
 				break
 
 		add_to_vault(sticker_dict.item)
@@ -371,8 +370,8 @@ func _on_deposit_button_pressed(button):
 	yield (Co.wait_frames(2), "completed")
 	emit_signal("unblock_mouse")
 
-func add_to_vault(sticker):		
-	SaveState.other_data.stickervault.append(get_item_key(sticker))	
+func add_to_vault(sticker):
+	SaveState.other_data.stickervault.append(get_item_key(sticker))
 
 func remove_sticker_from_vault(sticker)->bool:
 	if not SaveState.other_data.has("stickervault"):
@@ -383,15 +382,15 @@ func remove_sticker_from_vault(sticker)->bool:
 		if item == item_key:
 			SaveState.other_data.stickervault.remove(index)
 			return true
-		index += 1					
+		index += 1
 	return false
 
 func vault_contains_sticker(sticker)->bool:
 	if not SaveState.other_data.has("stickervault"):
-		return false 
+		return false
 	var item_key = get_item_key(sticker)
 	for item in SaveState.other_data.stickervault:
-		if str(item) == item_key:	
+		if str(item) == item_key:
 			return true
 	return false
 
@@ -400,8 +399,8 @@ func get_item_key(sticker):
 		return
 	var item_key = str(sticker.name) + str(sticker.value)
 	for attr in sticker.attributes:
-		 item_key = item_key + attr.template_path	
-	return item_key	
+		 item_key = item_key + attr.template_path
+	return item_key
 	"""
-	
+
 	return blocks[block_name]

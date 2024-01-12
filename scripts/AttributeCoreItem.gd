@@ -4,7 +4,7 @@ enum resources {pulp, wood, plastic, metal, wheat, upgrape, fused_material, jell
 				olive_up, tape_air, tape_astral, tape_basic, tape_beast, tape_chrome, tape_earth, tape_fire,
 				tape_ice, tape_lightning, tape_metal, tape_plant, tape_plastic, tape_poison,
 				tape_water, bootleg_ritual_candle, tape_optical_laser}
-				
+
 var items = Datatables.load("res://data/items/").table
 
 export (Array, Dictionary) var buffs
@@ -29,8 +29,8 @@ func get_clean_name(color)->String:
 	return Loc.trf(name,{
 		"rarity":color
 	})
-	
-func get_description():	
+
+func get_description():
 	return Loc.trf(description, {
 		"material":get_attach_resource().icon.resource_path,
 		"upgrade_material":get_upgrade_resource().icon.resource_path,
@@ -92,9 +92,9 @@ func get_attach_resource()->Resource:
 		return items["bootleg_ritual_candle"]
 	if attach_resource == resources.tape_optical_laser:
 		return items["tape_optical_laser"]
-	
+
 	return items["pulp"]
-	
+
 func get_upgrade_resource()->Resource:
 	if upgrade_resource == resources.pulp:
 		return items["pulp"]
@@ -148,6 +148,6 @@ func get_upgrade_resource()->Resource:
 		return items["bootleg_ritual_candle"]
 	if upgrade_resource == resources.tape_optical_laser:
 		return items["tape_optical_laser"]
-	
-	return items["pulp"]	
-	
+
+	return items["pulp"]
+
